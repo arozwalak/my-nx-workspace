@@ -8,12 +8,14 @@ describe('Hero', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [Hero]
-    })
-    .compileComponents();
+      imports: [Hero],
+    }).compileComponents();
 
     fixture = TestBed.createComponent(Hero);
     component = fixture.componentInstance;
+    fixture.componentRef.setInput('title', 'Test Title');
+    fixture.componentRef.setInput('subtitle', 'Test Subtitle');
+    fixture.componentRef.setInput('cta', 'Click Me');
     fixture.detectChanges();
   });
 
